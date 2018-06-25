@@ -29,6 +29,7 @@ public class GuiHandler {
         public GuiModConfigList(final GuiScreen screen) {
             super(screen);
 
+            /*
             try {
                 final Field fieldMods = ReflectionHelper.findField(GuiModList.class, "mods");
                 final List<ModContainer> mods = (List<ModContainer>) fieldMods.get(this);
@@ -43,6 +44,7 @@ public class GuiHandler {
             } catch (Exception e) {
                 Reference.logger.error("Failed to tweak mod list!", e);
             }
+            */
         }
     }
 }
