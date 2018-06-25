@@ -9,7 +9,7 @@ import cpw.mods.fml.client.IModGuiFactory;
 import cpw.mods.fml.common.ModContainer;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.ReflectionHelper;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiIngameMenu;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.client.event.GuiOpenEvent;
 
@@ -21,7 +21,7 @@ public class GuiHandler {
     @SubscribeEvent
     public void onGuiOpen(final GuiOpenEvent event) {
         if (event.gui instanceof GuiIngameModOptions) {
-            event.gui = new GuiModConfigList(Minecraft.getMinecraft().currentScreen);
+            event.gui = new GuiModConfigList(new GuiIngameMenu());
         }
     }
 

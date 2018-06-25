@@ -33,7 +33,7 @@ idea {
 }
 
 minecraft {
-    version = "${project.version_minecraft}-${project.version_forge}"
+    version = "${project.version_minecraft}-${project.version_forge}-${project.version_minecraft}"
 
     if (project.hasProperty('version_mappings'))
         mappings = project.version_mappings
@@ -122,7 +122,7 @@ task signJars(dependsOn: ['reobf', 'devJar', 'sourceJar']) {
     doLast {
         jar.destinationDir.eachFile { file ->
             if (!file.getPath().endsWith('.jar'))
-                return;
+                return
 
             logger.lifecycle "signing ${file}"
             ant.signjar(
